@@ -1,0 +1,19 @@
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+
+# Configurações de IDEs
+.vscode/
+.idea/
+*.swp
+
+# Logs e temporários
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Caso use Node.js ou Next.js no futuro
+node_modules/
+.next/
+out/
+build/
