@@ -4,28 +4,190 @@
     <meta charset="UTF-8">
     <title>Portfólio Gabriel Salvador</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-    <header>
-        <h1>Gabriel Vieitas Salvador</h1>
-        <p>Cefet-Rj Nova Friburgo | Sistemas de informação</p>
+
+    <header class="header-flex">
+        <img src="img/perfil.jpeg" alt="Minha foto" class="foto-perfil">
+
+        <div>
+            <h1>Gabriel Vieitas Salvador</h1>
+            <p>Cefet-RJ Nova Friburgo | Sistemas de Informação</p>
+        </div>
     </header>
 
-    <nav>
-        <a href="https://github.com/GabrielVSalvador" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/gabrielvieitassalvador" target="_blank">LinkedIn</a>
+    <!-- MENU TOPO -->
+    <nav class="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#conhecimento">Conhecimento</a>
+        <a href="#contato">Contato</a>
     </nav>
 
-    <section>
-        <h2>Matérias</h2>
-        <ul>
-            <li class="materia-item">
-                <strong>📚 Fundamentos Web</strong><br>
-                <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto1/index.html" class="projeto-link"> Primeiro Projeto</a>
-            </li>
-        </ul>
-    </section>
-</div>
+    <div class="container">
+
+        <!-- SOBRE -->
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>
+                Estudante de Sistemas de Informação no CEFET-RJ, com experiência em
+                rotinas administrativas e de estoque.
+                Tenho conhecimentos em programação (C, Java, SQL), redes e banco de
+                dados, e busco oportunidade como desenvolvedor júnior ou estagiário em
+                TI.
+                Motivado pela inovação e pela aplicação da tecnologia para resolver
+                problemas do mundo real.
+            </p>
+        </section>
+
+        <section id="projetos">
+            <h2>Projetos</h2>
+
+            <!-- LISTA DE MATÉRIAS -->
+            <div class="materias">
+                <button>Fundamentos Web</button>
+                <button>Java (POO)</button>
+                <button>EAD (C)</button>
+                <button>Projeto de Extensão</button>
+                <button>CASINF(Centro Acadêmico)</button>
+            </div>
+
+            <!-- PROJETOS -->
+            <div class="projetos-container">
+
+                <div id="web" class="projetos-box">
+                    <h3>Fundamentos Web</h3>
+                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto1/index.html" target="_blank" class="projeto-link">
+                        <p>Projeto 1</p>
+                    </a>
+                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto2/index.html" target="_blank" class="projeto-link">
+                        <p>Projeto 2</p>
+                    </a>
+                </div>
+
+                <div id="java" class="projetos-box">
+                    <h3>Java (POO)</h3>
+                    <p>Em breve...</p>
+                </div>
+
+                <div id="c" class="projetos-box">
+                    <h3>EAD (C)</h3>
+                    <p>Em breve...</p>
+                </div>
+
+                <div id="extensao" class="projetos-box">
+                    <h3>Projeto de Extensão</h3>
+                    <p>Em breve...</p>
+                </div>
+
+                <div id="academico" class="projetos-box">
+                    <h3>Centro Acadêmico de Sistemas de Informação</h3>
+                    <p>Em breve...</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+
+            <!-- EMPRESAS -->
+            <div class="empresas">
+
+                <div class="empresa">
+                    <img src="" alt="Empresa 1">
+                    <span>Empresa 1</span>
+                </div>
+
+                <div class="empresa">
+                    <img src="" alt="Empresa 2">
+                    <span>Empresa 2</span>
+                </div>
+
+            </div>
+
+            <!-- DETALHES -->
+            <div class="experiencia-detalhes">
+
+                <div id="empresa1" class="exp-box">
+                    <h3>Empresa 1</h3>
+                    <p><strong>Cargo:</strong> Gerente de Estoque </p>
+                    <p><strong>Período:</strong> 2020 – 2022 </p>
+                    <p>Controle de entrada e saída de produtos</p>
+                    <p>Solicitação de compras para reposição</p>
+                    <p>Organização do estoque</p>
+                    <p>Elaboração de inventários mensais</p>
+                    <p>Atendimento a requisições internas de outros setores</p>
+                </div>
+
+                <div id="empresa2" class="exp-box">
+                    <h3>Empresa 2</h3>
+                    <p><strong>Cargo:</strong> Aprendiz em Ocupações Administrativas</p>
+                    <p><strong>Período:</strong> 2018 – 2019 </p>
+                    <p>Preparação de planilhas;</p>
+                    <p>Atendimento ao cliente;</p>
+                    <p>Planejamento e execução de rotinas (calendários e escalas);</p>
+                    <p>Funções de caixa;</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONHECIMENTO -->
+        <section id="conhecimento">
+            <h2>Conhecimento</h2>
+            <ul>
+                <li>HTML, CSS</li>
+                <li>JavaScript (em aprendizado)</li>
+                <li>Node.js (em aprendizado)</li>
+                <li>TypeScript (em aprendizado)</li>
+                <li>C (estrutura de dados)</li>
+                <li>Java (POO)</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo:</p>
+
+            <div class="contato-container">
+
+                <!-- FORMULÁRIO -->
+                <form class="form-contato">
+                    <input type="text" placeholder="Seu nome" required>
+                    <input type="email" placeholder="Seu email" required>
+                    <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+
+                <!-- OUTROS CONTATOS -->
+                <div class="contato-info">
+                    <a href="mailto:seuemail@gmail.com">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+
+                    <a href="https://wa.me/5522999999999" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+
+                    <a href="https://github.com/GabrielVSalvador" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/gabrielvieitassalvador" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </footer>
+
 </body>
 </html>
