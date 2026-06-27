@@ -8,23 +8,34 @@
 </head>
 <body>
 
-    <header class="header-flex">
-        <img src="img/perfil.jpeg" alt="Minha foto" class="foto-perfil">
-
-        <div>
-            <h1>Gabriel Vieitas Salvador</h1>
-            <p>Cefet-RJ Nova Friburgo | Sistemas de Informação</p>
-        </div>
-    </header>
-
-    <!-- MENU TOPO -->
-    <nav class="menu">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#contato">Contato</a>
+    <!-- MENU LATERAL -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <nav class="menu-lateral" id="menuLateral">
+        <a href="#habilidades"><i class="fas fa-code"></i><span>Habilidades</span></a>
+        <a href="#sobre"><i class="fas fa-user"></i><span>Sobre</span></a>
+        <a href="#projetos"><i class="fas fa-folder"></i><span>Projetos</span></a>
+        <a href="#contato"><i class="fas fa-envelope"></i><span>Contato</span></a>
     </nav>
 
-    <div class="container">
+    <label class="tema-toggle" id="temaToggle">
+        <input type="checkbox" id="temaCheck">
+        <span class="slider"></span>
+    </label>
+
+    <div class="container" class="main-content">
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-texto">
+                <p class="hero-saudacao">Olá, eu sou</p>
+                <h1>Gabriel Vieitas Salvador</h1>
+                <p class="hero-sub">Estudante de Sistemas de Informação · CEFET-RJ</p>
+                <div class="hero-botoes">
+                    <a href="img/cv.pdf" download class="btn-primary">Download CV</a>
+                    <a href="#contato" class="btn-secondary">Entrar em Contato</a>
+                </div>
+            </div>
+            <img src="img/perfil.jpeg" alt="Gabriel Salvador" class="foto-perfil">
+        </header>
 
         <!-- SOBRE -->
         <section id="sobre">
@@ -39,104 +50,175 @@
             </p>
         </section>
 
-        <section id="experiencia">
-            <h2>Experiência Profissional</h2>
-
-            <!-- EMPRESAS -->
-            <div class="empresas">
-
-                <div class="empresa">
-                    <img src="img/starise.jpeg" alt="Depósito Starise">
-                    <h3>Depósito Starise</h3>
+        <section id="habilidades">
+            <h2>Habilidades</h2>
+            <div class="habilidades-grid" >
+                <div class="habilidade-card" onclick="filtrarProjetos('HTML')">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5</span>
                 </div>
-
-                 <!-- DETALHES -->
-                <div class="experiencia-detalhes">
-
-                    <div id="empresa1" class="exp-box">
-                        <p><strong>Cargo:</strong> Gerente de Estoque </p>
-                        <p><strong>Período:</strong> 2020 – 2022 </p>
-                        <p>Controle de entrada e saída de produtos</p>
-                        <p>Solicitação de compras para reposição</p>
-                        <p>Organização do estoque</p>
-                        <p>Elaboração de inventários mensais</p>
-                        <p>Atendimento a requisições internas de outros setores</p>
-                    </div>
+                <div class="habilidade-card" onclick="filtrarProjetos('CSS')">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS3</span>
                 </div>
-
-                <div class="experiencia-detalhes" class="empresa" class="exp-box">
-                    <img src="img/posto-conselheiro.png" alt="Posto Conselheiro Paulino">
-                    <h3>Posto Conselheiro Paulino</h3>
-
-                    <div id="empresa2">
-                        <p><strong>Cargo:</strong> Aprendiz em Ocupações Administrativas</p>
-                        <p><strong>Período:</strong> 2018 – 2019 </p>
-                        <p>Preparação de planilhas;</p>
-                        <p>Atendimento ao cliente;</p>
-                        <p>Planejamento e execução de rotinas (calendários e escalas);</p>
-                        <p>Funções de caixa;</p>
-                    </div>
+                <div class="habilidade-card" onclick="filtrarProjetos('JavaScript')">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
                 </div>
-
+                <div class="habilidade-card" onclick="filtrarProjetos('Java')">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="habilidade-card" onclick="filtrarProjetos('todos')">
+                    <i class="fab fa-github"></i>
+                    <span>Git & GitHub</span>
+                </div>
+                <div class="habilidade-card" onclick="filtrarProjetos('SQL')">
+                    <i class="fas fa-database"></i>
+                    <span>SQL</span>
+                </div>
+                <div class="habilidade-card" onclick="filtrarProjetos('C')">
+                    <i class="fas fa-c"></i>
+                    <span>C</span>
+                </div>
             </div>
-
         </section>
 
+        <!-- PROJETOS -->
         <section id="projetos">
             <h2>Projetos</h2>
 
-            <!-- LISTA DE MATÉRIAS -->
-            <div class="materias">
-                <button>Fundamentos Web</button>
-                <button>Java (POO)</button>
-                <button>EAD (C)</button>
-                <button>CASINF(Centro Acadêmico)</button>
+            <div class="filtros">
+                <button class="filtro" onclick="filtrarProjetos('todos')">Todos</button>
+                <button class="filtro" onclick="filtrarProjetos('HTML')">HTML</button>
+                <button class="filtro" onclick="filtrarProjetos('CSS')">CSS</button>
+                <button class="filtro" onclick="filtrarProjetos('JavaScript')">JavaScript</button>
+                <button class="filtro" onclick="filtrarProjetos('API')">API</button>
+                <button class="filtro" onclick="filtrarProjetos('Java')">Java</button>
+                <button class="filtro" onclick="filtrarProjetos('SQL')">SQL</button>
+                <button class="filtro" onclick="filtrarProjetos('C')">C</button>
             </div>
 
-            <!-- PROJETOS -->
-            <div class="projetos-container">
+            <div class="projetos-grid">
 
-                <div id="web" class="projetos-box">
-                    <h3>Fundamentos Web</h3>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto1/index.html" target="_blank" class="projeto-link">
-                        <p>Projeto 1</p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto2/index.html" target="_blank" class="projeto-link">
-                        <p>Projeto 2</p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto3/index.html" target="_blank" class="projeto-link">
-                        <p>Projeto 3</p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/sisCtrlFinanceiro/index.html" target="_blank" class="projeto-link">
-                        <p> Sistema de Controle Financeiro </p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/cadastroDeEventos/index.html" target="_blank" class="projeto-link">
-                        <p> Cadastro de Eventos </p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/consultaPaises/index.html" target="_blank" class="projeto-link">
-                        <p>Consulta Paises </p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/clima/index.html" target="_blank" class="projeto-link">
-                        <p>Consulta Clima</p>
-                    </a>
-                    <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/cefetflix/index.html" target="_blank" class="projeto-link">
-                        <p>CEFETflix</p>
-                    </a>
+                <div class="projeto-card" data-tags="HTML">
+                    <img src="img/screen-projeto1.jpg" alt="Sistema de Controle Financeiro">
+                    <div class="projeto-info">
+                        <h3>Primeiro HTML</h3>
+                        <p>Site simples criado com HTML.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto1/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/projeto1" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="java" class="projetos-box">
-                    <h3>Java (POO)</h3>
-                    <p>Em breve...</p>
+                 <div class="projeto-card" data-tags="HTML CSS">
+                    <img src="img/screen-projeto2.jpg" alt="Sistema de Controle Financeiro">
+                    <div class="projeto-info">
+                        <h3>Primeiro projeto com CSS</h3>
+                        <p>Site criado com HTML e CSS.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto2/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/projeto2" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="c" class="projetos-box">
-                    <h3>EAD (C)</h3>
-                    <p>Em breve...</p>
+                <div class="projeto-card" data-tags="HTML CSS">
+                    <img src="img/screen-projeto3.jpg" alt="Sistema de Controle Financeiro">
+                    <div class="projeto-info">
+                        <h3>Projeto HTML e CSS</h3>
+                        <p>Aprimorando habilidades em HTML e CSS.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/projeto3/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/projeto3" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div id="academico" class="projetos-box">
-                    <h3>Centro Acadêmico de Sistemas de Informação</h3>
-                    <p>Em breve...</p>
+                <div class="projeto-card" data-tags="HTML CSS JavaScript">
+                    <img src="img/screen-financeiro.jpg" alt="Sistema de Controle Financeiro">
+                    <div class="projeto-info">
+                        <h3>Sistema de Controle Financeiro</h3>
+                        <p>Controle de despesas com estatísticas, gráficos e localStorage.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/sisCtrlFinanceiro/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/sisCtrlFinanceiro" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card" data-tags="HTML CSS JavaScript">
+                    <img src="img/screen-eventos.jpg" alt="Cadastro de Eventos">
+                    <div class="projeto-info">
+                        <h3>Cadastro de Eventos</h3>
+                        <p>Sistema de cadastro com edição, busca e exportação JSON.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/cadastroDeEventos/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/cadastroDeEventos" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card" data-tags="HTML CSS JavaScript API">
+                    <img src="img/screen-paises.jpg" alt="GeoFinder">
+                    <div class="projeto-info">
+                        <h3>GeoFinder</h3>
+                        <p>Consulta de países com busca e ordenação via Fetch API.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/consultaPaises/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/consultaPaises" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card" data-tags="HTML CSS JavaScript API">
+                    <img src="img/screen-clima.jpg" alt="Weather Dashboard">
+                    <div class="projeto-info">
+                        <h3>Weather Dashboard</h3>
+                        <p>Consulta de clima em tempo real com histórico e gráficos.</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/clima/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/clima" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projeto-card" data-tags="HTML CSS JavaScript API">
+                    <img src="img/screen-cefetflix.jpg" alt="CefetFlix">
+                    <div class="projeto-info">
+                        <h3>CefetFlix</h3>
+                        <p>Sistema de consulta de filmes, séries e games</p>
+                        <div class="projeto-tags">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span>
+                        </div>
+                        <div class="projeto-botoes">
+                            <a href="https://GabrielVSalvador.github.io/fundamentos_web_2026/cefetflix/index.html" target="_blank" class="btn-projeto">Ver Projeto</a>
+                            <a href="https://github.com/GabrielVSalvador/fundamentos_web_2026/tree/main/cefetflix" target="_blank" class="btn-projeto-ghost"><i class="fab fa-github"></i> Repositório</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -144,56 +226,30 @@
 
     </div>
 
-    <!-- RODAPÉ -->
     <footer>
-        <section id="contato" class="contato">
+        <section id="contato">
             <h2>Contato</h2>
-            <p>Entre em contato comigo:</p>
-
-            <div class="contato-container">
-
-                <!-- FORMULÁRIO -->
-                <form class="form-contato">
-                    <input type="text" placeholder="Seu nome" required>
-                    <input type="email" placeholder="Seu email" required>
-                    <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-                    <button type="submit">Enviar Mensagem</button>
-                </form>
-
-                        <!-- CONHECIMENTO -->
-                <div id="conhecimento">
-                    <h2>Habilidades</h2>
-                    <ul>
-                        <li><i class="fab fa-html5"></i> HTML</li>
-                        <li><i class="fab fa-css3-alt"></i> CSS</li>
-                        <li><i class="fab fa-js"></i> JavaScript (em aprendizado)</li>
-                        <li><i class="fab fa-c"></i> C </li>
-                        <li><i class="fab fa-java"></i> Java</li>
-                    </ul>
-                </div>
-
-                <!-- OUTROS CONTATOS -->
-                <div class="contato-info">
-                    <a href="mailto:gabrielvieitas@gmail.com">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-
-                    <a href="https://wa.me/5522999999999" target="_blank">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-
-                    <a href="https://github.com/GabrielVSalvador" target="_blank">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/gabrielvieitassalvador" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-
+            <div class="contato-grid">
+                <a href="mailto:gabrielvieitas@gmail.com" class="contato-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://wa.me/5522992259303" target="_blank" class="contato-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://github.com/GabrielVSalvador" target="_blank" class="contato-card">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/gabrielvieitassalvador" target="_blank" class="contato-card">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </section>
     </footer>
+    <script src="./js/app.js"></script>
 
 </body>
 </html>
