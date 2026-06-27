@@ -156,16 +156,6 @@ section, header.hero, footer {
     white-space: nowrap;
 }
 
-.container {
-    margin-left: 0;
-    padding: 40px 60px;
-}
-
-footer {
-    margin-left: 0;
-    padding: 40px 60px;
-}
-
 /* CONTEÚDO PRINCIPAL */
 .container {
     margin-left:50px;
@@ -517,95 +507,51 @@ body.tema-claro footer {
 /* =========================
    RESPONSIVO
 ========================= */
-
-/* TABLET */
-@media (max-width: 900px) {
-
-    .header-flex {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .container {
-        padding: 30px 15px;
-    }
-
-    .contato-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .form-contato {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .empresas {
-        justify-content: center;
-    }
-}
-
-/* CELULAR */
-@media (max-width: 600px) {
-
-    /* HEADER */
-    .header-flex h1 {
-        font-size: 22px;
-    }
-
-    .foto-perfil {
-        width: 90px;
-        height: 90px;
-    }
-
-    /* MENU */
-    .menu {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .menu a {
-        font-size: 14px;
-    }
-
-    /* SEÇÕES */
-    h2 {
-        font-size: 20px;
-    }
-
-    /* PROJETOS */
-    .materias {
-        justify-content: center;
-    }
-
-    .materias button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-
-    /* HABILIDADES */
-    .habilidade-card span {
-        font-size: 14px;
-    }
-
-    /* CONTATO */
-    .contato {
+@media (max-width: 768px) {
+    .container,
+    footer,
+    .container.deslocado,
+    footer.deslocado {
+        margin-left: 0 !important;
         padding: 20px;
     }
 
-    .form-contato {
-        width: 100%;
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 60px;
     }
 
-    .form-contato input,
-    .form-contato textarea {
-        font-size: 14px;
+    .hero h1 {
+        font-size: 28px;
     }
 
-    /* AJUSTE GERAL */
-    section {
-        margin-bottom: 40px;
+    .hero-botoes {
+        justify-content: center;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .habilidades-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        justify-content: center;
+    }
+
+    .contato-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
